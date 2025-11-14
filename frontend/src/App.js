@@ -211,24 +211,66 @@ function NormalModeDisplay({ data }) {
 
 function MathModeDisplay({ data }) {
   return (
-    <section className="result-section math-section">
-      <h2>🔢 Math Question</h2>
-      <div className="math-question">
-        <h3>Question:</h3>
-        <p className="question-text">{data.math_question.question}</p>
-        
-        <details className="answer-details">
-          <summary>Show Answer</summary>
-          <div className="answer-content">
-            <h4>Answer:</h4>
-            <p className="answer-text">{data.math_question.answer}</p>
-            
-            <h4>Explanation:</h4>
-            <p className="explanation-text">{data.math_question.explanation}</p>
-          </div>
-        </details>
-      </div>
-    </section>
+    <>
+      <section className="result-section">
+        <h2>📝 Summary</h2>
+        <ul className="summary-list">
+          {data.summary && data.summary.map((point, idx) => (
+            <li key={idx}>{point}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="result-section">
+        <h2>❓ Quiz</h2>
+        <div className="quiz-container">
+          {data.quiz && data.quiz.map((q, idx) => (
+            <div key={idx} className="quiz-item">
+              <h3>Question {idx + 1}</h3>
+              <p className="question-text">{q.question}</p>
+              <div className="options">
+                {q.options.map((option, optIdx) => (
+                  <div 
+                    key={optIdx} 
+                    className={`option ${String.fromCharCode(65 + optIdx) === q.correct ? 'correct' : ''}`}
+                  >
+                    <span className="option-label">{String.fromCharCode(65 + optIdx)}.</span>
+                    {option}
+                    {String.fromCharCode(65 + optIdx) === q.correct && (
+                      <span className="correct-badge">✓ Correct</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="result-section">
+        <h2>💡 Study Tip</h2>
+        <p className="study-tip">{data.study_tip}</p>
+      </section>
+
+      <section className="result-section math-section">
+        <h2>🔢 Math Question</h2>
+        <div className="math-question">
+          <h3>Question:</h3>
+          <p className="question-text">{data.math_question.question}</p>
+          
+          <details className="answer-details">
+            <summary>Show Answer</summary>
+            <div className="answer-content">
+              <h4>Answer:</h4>
+              <p className="answer-text">{data.math_question.answer}</p>
+              
+              <h4>Explanation:</h4>
+              <p className="explanation-text">{data.math_question.explanation}</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </>
   );
 }
 

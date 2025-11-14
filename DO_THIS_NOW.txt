@@ -1,0 +1,53 @@
+═══════════════════════════════════════════════════════════════
+  ⚠️  YOU ARE STUCK BECAUSE THE API KEY IS NOT ADDED YET
+═══════════════════════════════════════════════════════════════
+
+CURRENT STATUS:
+❌ Your .env file has: GEMINI_API_KEY=your_gemini_api_key_here
+❌ This is a PLACEHOLDER, not a real key
+❌ That's why you see the error
+
+═══════════════════════════════════════════════════════════════
+  ✅ FOLLOW THESE 3 STEPS (Takes 2 minutes):
+═══════════════════════════════════════════════════════════════
+
+STEP 1: Get Your API Key
+─────────────────────────
+1. Open this URL in your browser:
+   👉 https://makersuite.google.com/app/apikey
+
+2. Sign in with your Google account
+
+3. Click the "Create API Key" button
+
+4. Copy the key (it will look like: AIzaSyAbCdEfGhIjKlMnOpQrStUvWxYz...)
+
+STEP 2: Add It To Your Project
+───────────────────────────────
+Open Terminal and run:
+
+   cd /Users/princemaurya/AI_StudyBuddy
+   ./SET_API_KEY.sh
+
+When it asks for your API key, paste it and press Enter.
+
+STEP 3: Done!
+─────────────
+The script will:
+✅ Save your key
+✅ Restart the server
+✅ Test if it works
+
+Then go to http://localhost:3000 and try again!
+
+═══════════════════════════════════════════════════════════════
+  ⚠️  IMPORTANT:
+═══════════════════════════════════════════════════════════════
+
+• I CANNOT get the API key for you
+• You MUST sign in with YOUR Google account
+• It's 100% FREE
+• Takes about 1-2 minutes total
+
+═══════════════════════════════════════════════════════════════
+
